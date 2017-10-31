@@ -1,0 +1,23 @@
+{
+  "title": "HostESports Page",
+  "name": "hostesports",
+  "version": "1.0.0",
+  "description": "Website for HostESports",
+  "homepage": "https://hostesports.com",
+  "license": "MIT",
+  "author": "Adam Dziuk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HostEsports/HostEsports.github.io.git"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "font-awesome": "4.7.0",
+    "jquery": "^3.2.1",
+    "jquery.easing": "^1.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "2.18.13",
+    "gulp": "^3.9.1"
+  }
+}
