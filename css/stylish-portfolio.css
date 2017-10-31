@@ -29,6 +29,10 @@ body {
 }
 
 
+#logo-img {
+  width: 400px;
+}
+
 /* Custom Button Styles */
 
 .btn-dark {
@@ -228,23 +232,6 @@ hr.small {
 }
 
 
-/* Map */
-
-.map {
-  height: 500px;
-}
-
-@media(max-width:768px) {
-  .map {
-    height: 75%;
-  }
-}
-
-.map iframe {
-  pointer-events: none;
-}
-
-
 /* Footer */
 
 footer {
@@ -258,4 +245,15 @@ footer {
   bottom: 5px;
   display: none;
   padding: 15px 20px;
+}
+
+
+/* Overrides */
+
+.bg-primary {
+  background-color: #000000 !important;
+}
+
+.text-primary {
+  color: #000000 !important;
 }
