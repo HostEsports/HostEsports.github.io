@@ -1,238 +1,320 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.png">
+    <title>Host eSports</title>
+  <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,800);</style><style type="text/css">* { -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-<head>
+*, html, body { font-family: 'Work Sans', 'Helvetica', sans-serif; }
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+html, body { margin: 0; padding: 0; }
 
-  <title>Host Eports</title>
+.container {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.shell {
+  max-width: 720px;
+}
+a {
+  text-decoration: none;
+  font-weight:bold;
+  letter-spacing: 0.45px;
+}
+a:hover {
+  text-decoration: none;
+}
 
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+/* Typography */
+.h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  letter-spacing: 0.7px;
+}
+.h2 {
+  font-size: 30px;
+  margin: 30px 0;
+}
+.h3 {
+  font-size: 24px;
+  line-height: 1.25;
+  margin: 25px 0;
+  text-transform: uppercase;
+}
+.h4 {
+  font-weight: bold;
+  letter-spacing: 0.45px;
+  font-size: 22px;
+  line-height: 1.5;
+}
+.p {
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-  <!-- Custom Fonts -->
-  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.css" rel="stylesheet">
+/* Art */
 
-</head>
+.logo {
+  width: 260px;
+  height: auto;
+  fill: #fff;
+  margin-bottom: 25px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+header {
+  padding: 100px 20px;
+  background: #230050;
+}
+header .h1 {
+  margin-bottom: 15px;
+}
+header .h3 {
+  margin-top: 15px;
+}
+header .button {
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 40px;
+  background: #8CFADC;
+  color: #257C64;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+header .button:hover {
+  background: #fff;
+  color: #000;
 
-<body>
-<!-- Navigation -->
-<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
-  <i class="fa fa-bars"></i>
-</a>
-<nav id="sidebar-wrapper">
-  <ul class="sidebar-nav">
-    <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
-      <i class="fa fa-times"></i>
-    </a>
-    <li class="sidebar-brand">
-      <a class="js-scroll-trigger" href="#top">Host</a>
-    </li>
-    <li>
-      <a class="js-scroll-trigger" href="#top">Home</a>
-    </li>
-    <li>
-      <a class="js-scroll-trigger" href="#about">About</a>
-    </li>
-    <li>
-      <a class="js-scroll-trigger" href="#services">Services</a>
-    </li>
-    <li>
-      <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-    </li>
-  </ul>
-</nav>
+}
+header .button:focus {
+  background: #8CFADC;
+  color: #257C64;
+}
+.header-info {
+  color: #fff;
+  max-width: 960px;
+  text-align: center;
+}
+.mission {
+  padding: 100px 40px;
+  background: #d3cce3; /* fallback for old browsers */ /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#d3cce3), to(#e9e4f0));
+  background: linear-gradient(to bottom, #d3cce3, #e9e4f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.mission h3 {
+  font-weight: bold;
+  letter-spacing: 0.45px;
+}
+.mission-info {
+  max-width: 580px;
+  margin: 0 auto;
+}
+.projects {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+.work {
+  margin: 0 auto;
+  margin-top: 40px;
+  text-align: center;
+}
+.workbutton {
+  padding: 10px 20px;
+  color: #230050;
+  -webkit-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  border-radius: 8px;
+  font-weight: bold;
+  letter-spacing: 0.45px;
+  border: 2px solid #230050;
+  display: inline-block;
+}
+.workbutton:hover {
+  border: 2px solid transparent;
+  background: #230050;
+  color: #fff;
+}
+.workname {
+  margin-bottom: 10px;
+}
 
-<!-- Header -->
-<header class="header" id="top">
-  <div class="header-img"></div>
-  <div class="text-vertical-center">
-    <img src="./img/host.png" id="logo-img">
-    <h3>Let us be your next Host.</h3>
-    <br>
-    <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Find Out More</a>
-  </div>
-</header>
+.work:last-child{
+  padding-bottom: 0;
+}
 
-<!-- About -->
-<section id="about" class="about">
-  <div class="container text-center">
-    <h2>White-glove facilitation of player experiences at events and tournaments</h2>
-    <p class="lead">Host focuses on planning and providing players and teams with streamline event experiences.</p>
-  </div>
-  <!-- /.container -->
-</section>
+.work .p {
+  font-weight:bold;
+}
 
-<!-- Services -->
-<section id="services" class="services bg-primary text-white">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-lg-10 mx-auto">
-        <h2>Our Services</h2>
-        <hr class="small">
-        <div class="row">
-          <div class="col-md-3 col-sm-6">
-            <div class="service-item">
-                  <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-trophy fa-stack-1x text-primary"></i>
-                  </span>
-              <h4>
-                <strong>Events</strong>
-              </h4>
-              <p>We create VIP experiences for players at events and after-parties, because they deserve it.</p>
-              <a href="mailto:info@hostesports.com" class="btn btn-light">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="service-item">
-                  <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-heartbeat fa-stack-1x text-primary"></i>
-                  </span>
-              <h4>
-                <strong>Player Care</strong>
-              </h4>
-              <p>Happy players are better players, we ensure players play their best game.</p>
-              <a href="mailto:info@hostesports.com" class="btn btn-light">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="service-item">
-                  <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-users fa-stack-1x text-primary"></i>
-                  </span>
-              <h4>
-                <strong>Player Hospitality</strong>
-              </h4>
-              <p>Facilitation of five-star experiences for players at your event, when they aren't playing.</p>
-              <a href="mailto:info@hostesports.com" class="btn btn-light">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <div class="service-item">
-                  <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-gamepad fa-stack-1x text-primary"></i>
-                  </span>
-              <h4>
-                <strong>Team Building</strong>
-              </h4>
-              <p>Host believes happy teams are better teams. We help that happen. </p>
-              <a href="mailto:info@hostesports.com" class="btn btn-light">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <!-- /.row (nested) -->
-      </div>
-      <!-- /.col-lg-10 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-</section>
+.work img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
-<!-- Callout -->
-<aside class="callout">
-  <div class="callout-img"></div>
-  <div class="text-vertical-center">
-    <h1>Bridging the gap between</h1>
-      <h1>Players and Events.</h1>
-  </div>
-</aside>
+.services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align:start;
+      -ms-flex-align:start;
+          align-items:flex-start;
+  max-width: 520px;
+  margin: 0 auto;
+  color: #fff;
+  margin-bottom: 40px;
+}
 
-<!-- Portfolio -->
-<section id="portfolio" class="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h2>Our Work</h2>
-        <hr class="small">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-fluid" src="img/recharge.jpg">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-fluid" src="img/cupcakes.jpg">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-fluid" src="img/conch.jpg">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="portfolio-item">
-              <img class="img-portfolio img-fluid" src="img/lounge.jpg">
-            </div>
-          </div>
-        </div>
-        <!-- /.row (nested) -->
-      </div>
-      <!-- /.col-lg-10 -->
-    </div>
-    <!-- /.row -->
-  </div>
-  <!-- /.container -->
-</section>
+.services img {
+  -webkit-box-shadow: 0 2px 10px #270C73;
+          box-shadow: 0 2px 10px #270C73;
+  border-radius: 8px;
 
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-center">
-        <h4>
-          <strong>Host</strong>
-        </h4>
-        <p>San Francisco
-          <br>Toronto</p>
-        <ul class="list-unstyled">
-          <li>
-          <li>
-            <i class="fa fa-envelope-o fa-fw"></i>
-            <a href="mailto:info@hostesports.com">info@hostesports.com</a>
-          </li>
-        </ul>
-        <br>
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <a href="https://twitter.com/umiscar">
-              <i class="fa fa-twitter fa-fw fa-3x"></i>
-            </a>
-          </li>
-        </ul>
-        <hr class="small">
-        <p class="text-muted">Copyright &copy; Host Inc 2018</p>
-      </div>
-    </div>
-  </div>
-  <a id="to-top" href="#top" class="btn btn-dark btn-lg js-scroll-trigger">
-    <i class="fa fa-chevron-up fa-fw fa-1x"></i>
-  </a>
-</footer>
+}
 
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+.servicesName {
+  font-weight: bold;
+  letter-spacing: 0.45px;
+}
 
-<!-- Plugin JavaScript -->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+.servicesDesc {
+  font-size: 14px;
+}
 
-<!-- Custom scripts for this template -->
-<script src="js/stylish-portfolio.js"></script>
+.servicesSubline {
+  margin-left: 20px;
+}
 
-</body>
+.servicesDesc {
+  -webkit-box-align:start;
+      -ms-flex-align:start;
+          align-items:flex-start;
+}
 
-</html>
-<link rel="stylesheet" href="style.css" />
+.service {
+    padding: 100px 0;
+    margin: 0 auto;
+    background: -webkit-gradient(linear, left top, left bottom, from(#270C73), color-stop(124.33%, #423D80)), #0C396E;
+    background: linear-gradient(180deg, #270C73 0%, #423D80 124.33%), #0C396E;
+}
+
+.service h1 {
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.service-info {
+  -webkit-box-align:start;
+      -ms-flex-align:start;
+          align-items:flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 720px;
+}
+
+.service .h1 {
+
+}
+
+.workinfo {
+  padding: 20px 0;
+}
+
+footer {
+  background: #0E0830;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 50px 20px 20px 0;
+}
+
+footer .a {
+  color: #fff;
+}
+
+footer p, footer h1 {
+  color: #fff;
+}
+
+footer .button {
+  max-width: 320px;
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 2px solid #fff;
+  text-align: center;
+  -webkit-transition: 0.12s linear all;
+  transition: 0.12s linear all;
+  wrap: nowrap;
+}
+
+footer .button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.footer-info {
+  color: #fff;
+  max-width: 960px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.copyright {
+  margin-top: 50px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/*# sourceURL=/Users/rickie/Github/host-new/src/App.css */
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9yaWNraWUvR2l0aHViL2hvc3QtbmV3L3NyYy9BcHAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBLElBQUksK0JBQXVCLENBQXZCLHVCQUF1QixFQUFFOztBQUU3QixnQkFBZ0Isa0RBQWtELEVBQUU7O0FBRXBFLGFBQWEsVUFBVSxDQUFDLFdBQVcsRUFBRTs7QUFFckM7RUFDRSxnQkFBZ0I7RUFDaEIsV0FBVztFQUNYLFVBQVU7Q0FDWDs7QUFFRDtFQUNFLGlCQUFpQjtDQUNsQjs7QUFFRDtFQUNFLHNCQUFzQjtFQUN0QixpQkFBaUI7RUFDakIsdUJBQXVCO0NBQ3hCOztBQUVEO0VBQ0Usc0JBQXNCO0NBQ3ZCOztBQUVELGdCQUFnQjtBQUNoQjtFQUNFLGdCQUFnQjtFQUNoQixvQkFBb0I7RUFDcEIsa0JBQWtCO0VBQ2xCLHNCQUFzQjtDQUN2Qjs7QUFFRDtFQUNFLGdCQUFnQjtFQUNoQixlQUFlO0NBQ2hCOztBQUVEO0VBQ0UsZ0JBQWdCO0VBQ2hCLGtCQUFrQjtFQUNsQixlQUFlO0VBQ2YsMEJBQTBCO0NBQzNCOztBQUVEO0VBQ0Usa0JBQWtCO0VBQ2xCLHVCQUF1QjtFQUN2QixnQkFBZ0I7RUFDaEIsaUJBQWlCO0NBQ2xCOztBQUVEO0VBQ0UsZ0JBQWdCO0VBQ2hCLGlCQUFpQjtDQUNsQjs7O0FBR0QsU0FBUzs7QUFFVDtFQUNFLGFBQWE7RUFDYixhQUFhO0VBQ2IsV0FBVztFQUNYLG9CQUFvQjtFQUNwQiwwQkFBa0I7VUFBbEIsa0JBQWtCO0NBQ25COztBQUVEO0VBQ0Usb0JBQW9CO0VBQ3BCLG9CQUFvQjtDQUNyQjs7QUFFRDtFQUNFLG9CQUFvQjtDQUNyQjs7QUFFRDtFQUNFLGlCQUFpQjtDQUNsQjs7QUFFRDtFQUNFLG1CQUFtQjtFQUNuQixzQkFBc0I7RUFDdEIsb0JBQW9CO0VBQ3BCLG9CQUFvQjtFQUNwQixlQUFlO0VBQ2YsZ0NBQXdCO0VBQXhCLHdCQUF3QjtDQUN6Qjs7QUFFRDtFQUNFLGlCQUFpQjtFQUNqQixZ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Z0JBQWdCO0NBQ2pCIiwiZmlsZSI6IkFwcC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJAaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3M/ZmFtaWx5PVdvcmsrU2Fuczo0MDAsODAwJyk7XG5cbiogeyBib3gtc2l6aW5nOiBib3JkZXItYm94OyB9XG5cbiosIGh0bWwsIGJvZHkgeyBmb250LWZhbWlseTogJ1dvcmsgU2FucycsICdIZWx2ZXRpY2EnLCBzYW5zLXNlcmlmOyB9XG5cbmh0bWwsIGJvZHkgeyBtYXJnaW46IDA7IHBhZGRpbmc6IDA7IH1cblxuLmNvbnRhaW5lciB7XG4gIG1heC13aWR0aDogMTAwJTtcbiAgcGFkZGluZzogMDtcbiAgbWFyZ2luOiAwO1xufVxuXG4uc2hlbGwge1xuICBtYXgtd2lkdGg6IDcyMHB4O1xufVxuXG5hIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICBmb250LXdlaWdodDpib2xkO1xuICBsZXR0ZXItc3BhY2luZzogMC40NXB4O1xufVxuXG5hOmhvdmVyIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xufVxuXG4vKiBUeXBvZ3JhcGh5ICovXG4uaDEge1xuICBmb250LXNpemU6IDM2cHg7XG4gIG1hcmdpbi1ib3R0b206IDI1cHg7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBsZXR0ZXItc3BhY2luZzogMC43cHg7XG59XG5cbi5oMiB7XG4gIGZvbnQtc2l6ZTogMzBweDtcbiAgbWFyZ2luOiAzMHB4IDA7XG59XG5cbi5oMyB7XG4gIGZvbnQtc2l6ZTogMjRweDtcbiAgbGluZS1oZWlnaHQ6IDEuMjU7XG4gIG1hcmdpbjogMjVweCAwO1xuICB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlO1xufVxuXG4uaDQge1xuICBmb250LXdlaWdodDogYm9sZDtcbiAgbGV0dGVyLXNwYWNpbmc6IDAuNDVweDtcbiAgZm9udC1zaXplOiAyMnB4O1xuICBsaW5lLWhlaWdodDogMS41O1xufVxuXG4ucCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDEuNTtcbn1cblxuXG4vKiBBcnQgKi9cblxuLmxvZ28ge1xuICB3aWR0aDogMjYwcHg7XG4gIGhlaWdodDogYXV0bztcbiAgZmlsbDogI2ZmZjtcbiAgbWFyZ2luLWJvdHRvbTogMjVweDtcbiAgZmlsdGVyOiBpbnZlcnQoMSk7XG59XG5cbmhlYWRlciB7XG4gIHBhZGRpbmc6IDEwMHB4IDIwcHg7XG4gIGJhY2tncm91bmQ6ICMyMzAwNTA7XG59XG5cbmhlYWRlciAuaDEge1xuICBtYXJnaW4tYm90dG9tOiAxNXB4O1xufVxuXG5oZWFkZXIgLmgzIHtcbiAgbWFyZ2luLXRvcDogMTVweDtcbn1cblxuaGVhZGVyIC5idXR0b24ge1xuICBwYWRkaW5nOiAxMHB4IDIwcHg7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYm9yZGVyLXJhZGl1czogNDBweDtcbiAgYmFja2dyb3VuZDogIzhDRkFEQztcbiAgY29sb3I6ICMyNTdDNjQ7XG4gIHRyYW5zaXRpb246IDAuMXMgbGluZWFyO1xufVxuXG5oZWFkZXIgLmJ1dHRvbjpob3ZlciB7XG4gIGJhY2tncm91bmQ6ICNmZmY7XG4gIGNvbG9yOiAjMDAwO1xuXG59XG5cbmhlYWRlciAuYnV0dG9uOmZvY3VzIHtcbiAgYmFja2dyb3VuZDogIzhDRkFEQztcbiAgY29sb3I6ICMyNTdDNjQ7XG59XG5cbi5oZWFkZXItaW5mbyB7XG4gIGNvbG9yOiAjZmZmO1xuICBtYXgtd2lkdGg6IDk2MHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5taXNzaW9uIHtcbiAgcGFkZGluZzogMTAwcHggNDBweDtcbiAgYmFja2dyb3VuZDogI2QzY2NlMzsgLyogZmFsbGJhY2sgZm9yIG9sZCBicm93c2VycyAqL1xuICBiYWNrZ3JvdW5kOiAtd2Via2l0LWxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICNkM2NjZTMsICNlOWU0ZjApOyAvKiBDaHJvbWUgMTAtMjUsIFNhZmFyaSA1LjEtNiAqL1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodG8gYm90dG9tLCAjZDNjY2UzLCAjZTllNGYwKTsgLyogVzNDLCBJRSAxMCsvIEVkZ2UsIEZpcmVmb3ggMTYrLCBDaHJvbWUgMjYrLCBPcGVyYSAxMissIFNhZmFyaSA3KyAqL1xufVxuXG4ubWlzc2lvbiBoMyB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBsZXR0ZXItc3BhY2luZzogMC40NXB4O1xufVxuXG4ubWlzc2lvbi1pbmZvIHtcbiAgbWF4LXdpZHRoOiA1ODBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG59XG5cbi5wcm9qZWN0cyB7XG4gIG1heC13aWR0aDogNjQwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBwYWRkaW5nOiAxMDBweCAwO1xufVxuXG4ud29yayB7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBtYXJnaW4tdG9wOiA0MHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi53b3JrYnV0dG9uIHtcbiAgcGFkZGluZzogMTBweCAyMHB4O1xuICBjb2xvcjogIzIzMDA1MDtcbiAgdHJhbnNpdGlvbjogMC4xcyBsaW5lYXIgYWxsO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBsZXR0ZXItc3BhY2luZzogMC40NXB4O1xuICBib3JkZXI6IDJweCBzb2xpZCAjMjMwMDUwO1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG4ud29ya2J1dHRvbjpob3ZlciB7XG4gIGJvcmRlcjogMnB4IHNvbGlkIHRyYW5zcGFyZW50O1xuICBiYWNrZ3JvdW5kOiAjMjMwMDUwO1xuICBjb2xvcjogI2ZmZjtcbn1cblxuLndvcmtuYW1lIHtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbn1cblxuLndvcms6bGFzdC1jaGlsZHtcbiAgcGFkZGluZy1ib3R0b206IDA7XG59XG5cbi53b3JrIC5wIHtcbiAgZm9udC13ZWlnaHQ6Ym9sZDtcbn1cblxuLndvcmsgaW1nIHtcbiAgd2lkdGg6IDEwMCU7XG4gIGJvcmRlci1yYWRpdXM6IDhweDtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbn1cblxuLnNlcnZpY2VzIHtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgYWxpZ24taXRlbXM6ZmxleC1zdGFydDtcbiAgbWF4LXdpZHRoOiA1MjBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGNvbG9yOiAjZmZmO1xuICBtYXJnaW4tYm90dG9tOiA0MHB4O1xufVxuXG4uc2VydmljZXMgaW1nIHtcbiAgYm94LXNoYWRvdzogMCAycHggMTBweCAjMjcwQzczO1xuICBib3JkZXItcmFkaXVzOiA4cHg7XG5cbn1cblxuLnNlcnZpY2VzTmFtZSB7XG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xuICBsZXR0ZXItc3BhY2luZzogMC40NXB4O1xufVxuXG4uc2VydmljZXNEZXNjIHtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4uc2VydmljZXNTdWJsaW5lIHtcbiAgbWFyZ2luLWxlZnQ6IDIwcHg7XG59XG5cbi5zZXJ2aWNlc0Rlc2Mge1xuICBhbGlnbi1pdGVtczpmbGV4LXN0YXJ0O1xufVxuXG4uc2VydmljZSB7XG4gICAgcGFkZGluZzogMTAwcHggMDtcbiAgICBtYXJnaW46IDAgYXV0bztcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjMjcwQzczIDAlLCAjNDIzRDgwIDEyNC4zMyUpLCAjMEMzOTZFO1xufVxuXG4uc2VydmljZSBoMSB7XG4gIGNvbG9yOiAjZmZmO1xuICBtYXJnaW4tYm90dG9tOiA1MHB4O1xufVxuXG4uc2VydmljZS1pbmZvIHtcbiAgYWxpZ24taXRlbXM6ZmxleC1zdGFydDtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcbiAgZmxleC13cmFwOiB3cmFwO1xuICBtYXgtd2lkdGg6IDcyMHB4O1xufVxuXG4uc2VydmljZSAuaDEge1xuXG59XG5cbi53b3JraW5mbyB7XG4gIHBhZGRpbmc6IDIwcHggMDtcbn1cblxuZm9vdGVyIHtcbiAgYmFja2dyb3VuZDogIzBFMDgzMDtcbiAgZGlzcGxheTogZmxleDtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gIHBhZGRpbmc6IDUwcHggMjBweCAyMHB4IDA7XG59XG5cbmZvb3RlciAuYSB7XG4gIGNvbG9yOiAjZmZmO1xufVxuXG5mb290ZXIgcCwgZm9vdGVyIGgxIHtcbiAgY29sb3I6ICNmZmY7XG59XG5cbmZvb3RlciAuYnV0dG9uIHtcbiAgbWF4LXdpZHRoOiAzMjBweDtcbiAgd2lkdGg6IGF1dG87XG4gIHBhZGRpbmc6IDEwcHggMjBweDtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogMjBweDtcbiAgYm9yZGVyOiAycHggc29saWQgI2ZmZjtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xuICB0cmFuc2l0aW9uOiAwLjEycyBsaW5lYXIgYWxsO1xuICB3cmFwOiBub3dyYXA7XG59XG5cbmZvb3RlciAuYnV0dG9uOmhvdmVyIHtcbiAgYmFja2dyb3VuZDogI2ZmZjtcbiAgY29sb3I6ICMwMDA7XG59XG5cbi5mb290ZXItaW5mbyB7XG4gIGNvbG9yOiAjZmZmO1xuICBtYXgtd2lkdGg6IDk2MHB4O1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LWRpcmVjdGlvbjogY29sdW1uO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbi5jb3B5cmlnaHQge1xuICBtYXJnaW4tdG9wOiA1MHB4O1xuICBjb2xvcjogI2NjYztcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style></head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to view this website.
+    </noscript>
+    <div id="root"><div class="app"><div class="container"><header id="Header"><div class="row"><div class="header-info mx-auto"><img class="logo" src="./assets/images/logo.c864f54b.png"><h1 class="h1">Host eSports</h1><h3 class="h3">San Francisco, California</h3><a class="button" href="#Service">Learn More</a></div></div></header><div class="mission" id="Mission"><div class="row"><div class="mission-info"><h3 class="h3">White-glove facilitation of player experiences at events and tournaments</h3><p class="p">Host focuses on planning and providing players and teams with streamline event experiences.</p></div></div></div><div class="service" id="Service"><div class="col-sm-12 text-center"><h1 class="h1">Our Services</h1></div><div class="d-flex flex-wrap shell mx-auto col-sm-12"><div class="services col-sm-6"><img src="./assets/images/events.12753f7a.svg"><div class="servicesSubline"><div class="service-info"><div class="servicesName">Events</div><div class="servicesDesc">We create VIP experiences for players at events and after-parties, because they deserve it.</div></div></div></div><div class="services alt col-sm-6"><img src="./assets/images/care.dfd9d5ab.svg"><div class="servicesSubline"><div class="service-info"><div class="servicesName">Player Care</div><div class="servicesDesc">Happy players are better players, we ensure players play their best game.</div></div></div></div><div class="services col-sm-6"><img src="./assets/images/team.60106f41.svg"><div class="servicesSubline"><div class="service-info"><div class="servicesName">Team Building</div><div class="servicesDesc">Host believes happy teams are better teams. We help that happen.</div></div></div></div><div class="services alt col-sm-6"><img src="./assets/images/hospitality.f80547b3.svg"><div class="servicesSubline"><div class="service-info"><div class="servicesName">Player Hospitality</div><div class="servicesDesc">Happy players are better players, we ensure players play their best game.</div></div></div></div></div></div><div class="projects px-3" id="Work"><div class="col-sm-12"><h1 class="h1 text-center">Our Work</h1></div><div class="col-sm-12"><div class="row"><div class="col-xs work p-2"><img src="https://hostesports.com/img/recharge.jpg"></div><div class="col-xs work p-2"><img src="https://hostesports.com/img/cupcakes.jpg"></div><div class="col-xs work p-2"><img src="https://hostesports.com/img/conch.jpg"></div><div class="col-xs work p-2"><img src="https://hostesports.com/img/lounge.jpg"></div></div></div></div><footer id="Footer"><div class="row"><div class="footer-info text-center col-sm-12"><p class="h4">Host eSports</p><p class="p">San Francisco, California</p><a class="a button" href="mailto:info@hostesports.com">info@hostesports.com</a><a class="a button" href="https://twitter.com/hostesports">Follow @hostesports</a><p class="copyright">Copyright © Host Inc 2018</p></div></div></footer></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm run dev` or `yarn dev`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script type="text/javascript" src="/manifest.js"></script><script type="text/javascript" src="/vendor.js"></script><script type="text/javascript" src="/client.js"></script>
+
+</body></html>
