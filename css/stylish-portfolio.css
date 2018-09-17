@@ -254,6 +254,10 @@ hr.small {
   margin: 10px;
 }
 
+.tweet-item {
+  float: left;
+  width: 200px;
+}
 
 /* Footer */
 
